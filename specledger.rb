@@ -14,4 +14,7 @@ class Specledger < Formula
   test do
     system bin/"sl", "version"
   end
+
+  # Disable bottle generation - build from source only
+  bottle :unneeded
 end
