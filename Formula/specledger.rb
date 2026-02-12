@@ -5,24 +5,42 @@
 class Specledger < Formula
   desc "Unified CLI for project bootstrap and specification dependency management"
   homepage "https://github.com/specledger/specledger"
-  version "1.0.12"
+  version "1.0.13"
   license "MIT"
-  depends_on :macos
 
-  if Hardware::CPU.intel?
-    url "https://github.com/specledger/specledger/releases/download/v1.0.12/specledger_1.0.12_darwin_amd64.tar.gz"
-    sha256 "cbf3f0bd27730ce3a07c4343226f05ced9c8697f194dc436d34a97144a097cb2"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/specledger/specledger/releases/download/v1.0.13/specledger_1.0.13_darwin_amd64.tar.gz"
+      sha256 "edc86a54e62aeaa892a86e4c6ebf9bd28e1577556591b17f317c34ac7e04e0df"
 
-    def install
-      bin.install "sl"
+      def install
+        bin.install "sl"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/specledger/specledger/releases/download/v1.0.13/specledger_1.0.13_darwin_arm64.tar.gz"
+      sha256 "1f89fc5ab62164c50672c19d6ba0d20c98d02e9fcd933c8e260d8b0f17679778"
+
+      def install
+        bin.install "sl"
+      end
     end
   end
-  if Hardware::CPU.arm?
-    url "https://github.com/specledger/specledger/releases/download/v1.0.12/specledger_1.0.12_darwin_arm64.tar.gz"
-    sha256 "fab57d81f7e0e36e2c523b23a4adf4669ef417c930b5ab64e1feee97d52ac2d5"
 
-    def install
-      bin.install "sl"
+  on_linux do
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/specledger/specledger/releases/download/v1.0.13/specledger_1.0.13_linux_amd64.tar.gz"
+      sha256 "5e960b6000aae1307437d2ec50534a0444b0343a4eb3b8f9bb81704339531d6e"
+      def install
+        bin.install "sl"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/specledger/specledger/releases/download/v1.0.13/specledger_1.0.13_linux_arm64.tar.gz"
+      sha256 "ea6647bc56009b1efcc5ed8c26f343c5d5fd12ae781de0b62674326786ff2ce9"
+      def install
+        bin.install "sl"
+      end
     end
   end
 end
