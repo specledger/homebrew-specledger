@@ -5,21 +5,21 @@
 class Specledger < Formula
   desc "Unified CLI for project bootstrap and specification dependency management"
   homepage "https://github.com/specledger/specledger"
-  version "1.2.1"
+  version "1.2.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/specledger/specledger/releases/download/v1.2.1/specledger_1.2.1_darwin_amd64.tar.gz"
-      sha256 "0ba048f45a555dc5cbee86e0d3a19855d29de24d56efd2b3f1ee77c7288ab0eb"
+      url "https://github.com/specledger/specledger/releases/download/v1.2.2/specledger_1.2.2_darwin_amd64.tar.gz"
+      sha256 "0985a0127b9582a03c07e1a0b5e96cd7e1f1dd777356970d4512e43ad5b2e694"
 
       define_method(:install) do
         bin.install "sl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/specledger/specledger/releases/download/v1.2.1/specledger_1.2.1_darwin_arm64.tar.gz"
-      sha256 "a43130f932a4a8a9ea96154181a11569009ab1cdfcab2306a5a4b6da421db6de"
+      url "https://github.com/specledger/specledger/releases/download/v1.2.2/specledger_1.2.2_darwin_arm64.tar.gz"
+      sha256 "b5de7b6cc97bb1ce2f722fb06150d700f8f3620b354a503744dca5d9ebd427e0"
 
       define_method(:install) do
         bin.install "sl"
@@ -29,15 +29,15 @@ class Specledger < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/specledger/specledger/releases/download/v1.2.1/specledger_1.2.1_linux_amd64.tar.gz"
-      sha256 "74ddc8e127a1eb77dc577fb1ec214164bcb1da15e7873ba1a5d08b00c85251ce"
+      url "https://github.com/specledger/specledger/releases/download/v1.2.2/specledger_1.2.2_linux_amd64.tar.gz"
+      sha256 "4896246c95d75df7eccb0c48c48ea0db8995b56eedf5f9b1a9c9ec0fc9793068"
       define_method(:install) do
         bin.install "sl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/specledger/specledger/releases/download/v1.2.1/specledger_1.2.1_linux_arm64.tar.gz"
-      sha256 "7dd5ec5860a34828fd2762c3ce17a4bf28c08549e09193ee24ff70dd8898e4d3"
+      url "https://github.com/specledger/specledger/releases/download/v1.2.2/specledger_1.2.2_linux_arm64.tar.gz"
+      sha256 "148c00dc9f8974429397a65de19085258055623229ebdedc3512b17accfff5f6"
       define_method(:install) do
         bin.install "sl"
       end
